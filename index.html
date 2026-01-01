@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NISARGAVEDH | Environmental NGO</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Lora:wght@400;500;600;700&family=Special+Elite&family=Fredericka+the+Great&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html" class="logo"><img src="logo2.png" alt="Partner Logo" class="logo-img logo-img-partner"><img src="logo.png" alt="Nisargavedh Logo" class="logo-img"> NISARGAVEDH</a>
+                <button class="mobile-menu-btn" onclick="toggleMenu()">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <nav>
+                    <ul id="nav-menu">
+                        <li><a href="index.html" class="active">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="team.html">Team</a></li>
+                        <li class="has-dropdown">
+                            <a href="nisargavedh.html">Programs <i class="fas fa-chevron-down"></i></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="documentary.html">Documentary</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="involved.html">Get Involved</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Floating Get Involved Button -->
+    <a href="involved.html" class="btn floating-btn">Get Involved</a>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/919665820463?text=Hello!%20I%20want%20to%20know%20more%20about%20NISARGAVEDH" class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <section class="hero">
+        <div class="container">
+            <p class="hero-subtitle">An Anthropogenic Approach Towards Habitat Development</p>
+            <div class="hero-title-wrapper">
+                <div class="hero-logo-bg">
+                    <img src="image copy.png" alt="Logo Background">
+                </div>
+                <h1>NISARGAVEDH</h1>
+            </div>
+            <p class="hero-description">Protecting our environment and preserving natural habitats for future generations through conservation, education, and community action.</p>
+            <div class="hero-image-section">
+                <div class="hero-image hero-video">
+                    <video id="heroVideo" autoplay muted loop playsinline>
+                        <source src="videoplayback.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <button class="video-sound-btn" onclick="toggleSound()">
+                        <i class="fas fa-volume-mute" id="soundIcon"></i>
+                    </button>
+                </div>
+                <div class="hero-message">
+                    <h3>🌿 Important Message</h3>
+                    <p>Every tree we plant, every species we protect, and every community we educate brings us one step closer to a sustainable future.</p>
+                    <p><strong>Together, we can make a difference.</strong></p>
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSdpAGvizks5tEp9SIdIjATUpUbQwAIp-7jscLe1xfjCRz8RJA/viewform" class="btn btn-volunteer" target="_blank">Take Action Now</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- What We Do Section -->
+        <div class="whatwedo-section">
+            <h2>What We Do</h2>
+            <div class="whatwedo-grid">
+                <div class="whatwedo-item">
+                    <img src="whatwedo-1.png" alt="Ecosystem Restoration">
+                    <h3>Ecosystem Restoration</h3>
+                    <p>Promoting a sense of ownership in every individual towards the conservation of the earth.</p>
+                </div>
+                <div class="whatwedo-item">
+                    <img src="whatwedo-2.png" alt="Education Beyond Walls">
+                    <h3>Education Beyond Walls</h3>
+                    <p>Helping to broaden the horizon. Nature for Future</p>
+                </div>
+                <div class="whatwedo-item">
+                    <img src="whatwedo-3.png" alt="Sustainable Livelihood">
+                    <h3>Sustainable Livelihood</h3>
+                    <p>Enhancing the Capabilities and Assets for Both Now and the Future without deteriorating natural resources.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Vision Mission Goals Section -->
+        <div class="vmg-section">
+            <div class="vmg-item">
+                <div class="vmg-image">
+                    <img src="mission-image.png" alt="Our Vision">
+                </div>
+                <div class="vmg-content">
+                    <h2>Our Vision</h2>
+                    <p>At CHIP Nagpur, our vision for the Nisargavedh project is to create a remarkable sustainable eco-restoration initiative that transcends boundaries, revitalizes ecosystems, and inspires communities. We aim to forge a harmonious relationship between nature and humanity.</p>
+                    <p>By engaging local communities, fostering partnerships, advocating for sustainable practices, and empowering the next generation, we strive to create a greener, healthier, and more resilient environment for children and young adults, ensuring a brighter future for all.</p>
+                </div>
+            </div>
+
+            <div class="vmg-item vmg-reverse">
+                <div class="vmg-image">
+                    <img src="goal-image.png" alt="Mission">
+                </div>
+                <div class="vmg-content">
+                    <h2>Mission</h2>
+                    <ul>
+                        <li>Enabling the restoration of the ecosystem and establishing it as a vital corridor for wildlife movement.</li>
+                        <li>Fostering an immersive open-air learning environment, embracing students of all ages and generations, thereby encouraging a closer relationship with Mother Nature.</li>
+                        <li>Providing local people with access to fundamental healthcare resources while equipping them with the knowledge they need to live sustainably.</li>
+                        <li>Empowering women holistically by facilitating economic freedom, promoting their mental health, and encouraging cleanliness practices.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="vmg-item">
+                <div class="vmg-image">
+                    <img src="whatwedo-1.png" alt="Goal">
+                </div>
+                <div class="vmg-content">
+                    <h2>Goal</h2>
+                    <p>At CHIP Nagpur, our mission encompasses several key objectives. Primarily, we want to educate more than 400 rural kids over the course of ten years, strengthening their fundamental concepts. Secondly, in collaboration with the Maharashtra Forest Department (with 27,500 trees already planted), we are dedicated to revitalising 70 acres of degraded forest land by planting over 50,000 tree saplings.</p>
+                    <p>In addition, we endeavour to connect and engage over 50,000 citizens with nature, encouraging hands-on learning experiences. We aim to assist 200 local families in generating sustainable livelihoods and support 10 research projects over the next decade.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Supporters Section -->
+        <div class="supporters-section">
+            <h3>Our Supporters</h3>
+            <div class="supporters-marquee">
+                <div class="supporters-track">
+                    <img src="supporter-1.png" alt="Supporter">
+                    <img src="supporter-2.png" alt="Supporter">
+                    <img src="supporter-3.png" alt="Supporter">
+                    <img src="supporter-4.png" alt="Supporter">
+                    <img src="supporter-5.png" alt="Supporter">
+                    <img src="supporter-6.png" alt="Supporter">
+                    <img src="supporter-7.png" alt="Supporter">
+                    <img src="supporter-8.png" alt="Supporter">
+                    <img src="supporter-9.png" alt="Supporter">
+                    <img src="supporter-10.png" alt="Supporter">
+                    <img src="supporter-11.png" alt="Supporter">
+                    <img src="supporter-12.png" alt="Supporter">
+                    <!-- Duplicate for seamless loop -->
+                    <img src="supporter-1.png" alt="Supporter">
+                    <img src="supporter-2.png" alt="Supporter">
+                    <img src="supporter-3.png" alt="Supporter">
+                    <img src="supporter-4.png" alt="Supporter">
+                    <img src="supporter-5.png" alt="Supporter">
+                    <img src="supporter-6.png" alt="Supporter">
+                    <img src="supporter-7.png" alt="Supporter">
+                    <img src="supporter-8.png" alt="Supporter">
+                    <img src="supporter-9.png" alt="Supporter">
+                    <img src="supporter-10.png" alt="Supporter">
+                    <img src="supporter-11.png" alt="Supporter">
+                    <img src="supporter-12.png" alt="Supporter">
+                </div>
+            </div>
+        </div>
+
+        <!-- News and Latest Project Section -->
+        <div class="news-project-section">
+            <div class="news-column">
+                <div class="news-item">
+                    <h4>News 1</h4>
+                    <p>New reforestation initiative launched in the Western Ghats region.</p>
+                </div>
+                <div class="news-item">
+                    <h4>News 2</h4>
+                    <p>Community cleanup drive removes 500kg of plastic from local rivers.</p>
+                </div>
+                <div class="news-item">
+                    <h4>News 3</h4>
+                    <p>Wildlife sanctuary reports increase in tiger population this year.</p>
+                </div>
+            </div>
+            <div class="latest-project">
+                <a href="https://wa.me/919665820463?text=Hello!%20I%20would%20like%20to%20donate%20to%20NISARGAVEDH" class="btn btn-donate" target="_blank">Donate Now</a>
+                <h3>Latest Project</h3>
+                <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Team working on conservation">
+            </div>
+            <div class="project-description">
+                <p>Our newest initiative focuses on restoring mangrove ecosystems along coastal regions. These vital habitats protect shorelines from erosion, provide nurseries for marine life, and store significant amounts of carbon. Join us in this critical mission to preserve these natural wonders for future generations.</p>
+            </div>
+        </div>
+
+        <!-- Progress So Far Section -->
+        <div class="progress-section">
+            <h2>Progress So Far</h2>
+            <p class="progress-subtitle">Our journey of making a difference, one step at a time</p>
+            
+            <div class="progress-stats-grid">
+                <div class="progress-stat-card">
+                    <div class="stat-icon"><i class="fas fa-tree"></i></div>
+                    <div class="stat-number">27,500+</div>
+                    <div class="stat-label">Trees Planted</div>
+                    <p class="stat-desc">Creating green corridors for wildlife movement</p>
+                </div>
+                <div class="progress-stat-card">
+                    <div class="stat-icon"><i class="fas fa-child"></i></div>
+                    <div class="stat-number">12,000+</div>
+                    <div class="stat-label">Children Impacted</div>
+                    <p class="stat-desc">Educating the next generation about nature</p>
+                </div>
+                <div class="progress-stat-card">
+                    <div class="stat-icon"><i class="fas fa-users"></i></div>
+                    <div class="stat-number">3,500+</div>
+                    <div class="stat-label">Volunteers</div>
+                    <p class="stat-desc">Dedicated individuals making a difference</p>
+                </div>
+                <div class="progress-stat-card">
+                    <div class="stat-icon"><i class="fas fa-home"></i></div>
+                    <div class="stat-number">700+</div>
+                    <div class="stat-label">People Impacted</div>
+                    <p class="stat-desc">Transforming lives in rural communities</p>
+                </div>
+                <div class="progress-stat-card">
+                    <div class="stat-icon"><i class="fas fa-hand-holding-heart"></i></div>
+                    <div class="stat-number">500+</div>
+                    <div class="stat-label">Donations</div>
+                    <p class="stat-desc">Generous contributions from supporters</p>
+                </div>
+                <div class="progress-stat-card">
+                    <div class="stat-icon"><i class="fas fa-project-diagram"></i></div>
+                    <div class="stat-number">6+</div>
+                    <div class="stat-label">Active Projects</div>
+                    <p class="stat-desc">Ongoing initiatives for ecosystem restoration</p>
+                </div>
+            </div>
+            
+            <div class="progress-cta">
+                <a href="involved.html" class="btn btn-volunteer">Be Part of Our Journey</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <h3>NISARGAVEDH</h3>
+                    <p>Protecting nature for future generations through conservation, education, and sustainable development.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="projects.html">Projects</a></li>
+                        <li><a href="whatwedo.html">What We Do</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Get Involved</h4>
+                    <ul>
+                        <li><a href="involved.html">Volunteer</a></li>
+                        <li><a href="involved.html">Donate</a></li>
+                        <li><a href="#">Partner With Us</a></li>
+                        <li><a href="#">Careers</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Contact Info</h4>
+                    <ul>
+                        <li>3A, Nawab Area, Tilak Nagar</li>
+                        <li>Nagpur, 440010 (MS), INDIA</li>
+                        <li>+91 9665820463</li>
+                        <li>chipnagpurngo@gmail.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>Copyright © 2025 Nisargavedh | Powered by Nisargavedh</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            document.getElementById('nav-menu').classList.toggle('active');
+        }
+
+        // Mobile dropdown toggle
+        document.addEventListener('DOMContentLoaded', function() {
+            const dropdowns = document.querySelectorAll('.has-dropdown > a');
+            dropdowns.forEach(function(dropdown) {
+                dropdown.addEventListener('click', function(e) {
+                    if (window.innerWidth <= 768) {
+                        e.preventDefault();
+                        this.parentElement.classList.toggle('open');
+                    }
+                });
+            });
+        });
+
+        function toggleSound() {
+            var video = document.getElementById('heroVideo');
+            var icon = document.getElementById('soundIcon');
+            if (video.muted) {
+                video.muted = false;
+                icon.classList.remove('fa-volume-mute');
+                icon.classList.add('fa-volume-up');
+            } else {
+                video.muted = true;
+                icon.classList.remove('fa-volume-up');
+                icon.classList.add('fa-volume-mute');
+            }
+        }
+
+        // Pie chart hover - highlight corresponding label
+        document.querySelectorAll('.pie-segment').forEach(segment => {
+            segment.addEventListener('mouseenter', function() {
+                const index = this.getAttribute('data-index');
+                const label = document.querySelector('.pie-label-' + index);
+                if (label) {
+                    label.classList.add('active');
+                }
+            });
+            
+            segment.addEventListener('mouseleave', function() {
+                const index = this.getAttribute('data-index');
+                const label = document.querySelector('.pie-label-' + index);
+                if (label) {
+                    label.classList.remove('active');
+                }
+            });
+        });
+    </script>
+
+    <!-- AI Chatbot -->
+    <div class="chatbot-container" id="chatbot">
+        <div class="chatbot-header">
+            <span>🦉 Nisargavedh Assistant</span>
+            <div class="chatbot-header-btns">
+                <button onclick="refreshChat()" class="chatbot-refresh"><i class="fas fa-sync-alt"></i></button>
+                <button onclick="toggleChatbot()" class="chatbot-close">&times;</button>
+            </div>
+        </div>
+        <div class="chatbot-messages" id="chatMessages">
+            <div class="chat-message bot-message">
+                <span class="bot-icon">🦉</span>
+                <div class="message-content">Hello! I'm the Nisargavedh Assistant. What's your name?</div>
+            </div>
+        </div>
+        <div class="chatbot-quick-btns" id="quickBtns">
+            <button onclick="sendQuickQuery('How can I volunteer?')">Volunteer</button>
+            <button onclick="sendQuickQuery('How can I donate?')">Donate</button>
+            <button onclick="sendQuickQuery('Tell me about your products')">Products</button>
+            <button onclick="sendQuickQuery('What programs do you have?')">Programs</button>
+        </div>
+        <div class="chatbot-input">
+            <input type="text" id="chatInput" placeholder="Type your message..." onkeypress="handleKeyPress(event)">
+            <button onclick="sendMessage()"><i class="fas fa-paper-plane"></i></button>
+        </div>
+    </div>
+
+    <!-- Floating Owl Button -->
+    <button class="chatbot-toggle" id="chatbotToggle" onclick="toggleChatbot()">
+        <span class="owl-icon">🦉</span>
+    </button>
+
+    <script>
+        let userName = '';
+        let chatState = 'askName';
+        const SHEET_URL = 'https://script.google.com/macros/s/AKfycbyXKJdoMzwtQktTbDA3gCqtcMglqteq8pbPMXomdhY-uWW3iqa-vYS4_41sc8xwmZLD/exec';
+
+        // Save to Google Sheet
+        function saveToSheet(name, message) {
+            fetch(SHEET_URL, {
+                method: 'POST',
+                mode: 'no-cors',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ name: name, message: message, page: window.location.pathname })
+            }).catch(err => console.log('Sheet save:', err));
+        }
+
+        // Knowledge base for the chatbot
+        const responses = {
+            volunteer: `Great choice, {name}! 🌱 To volunteer with us:\n\n👉 <a href="https://docs.google.com/forms/d/e/1FAIpQLSdpAGvizks5tEp9SIdIjATUpUbQwAIp-7jscLe1xfjCRz8RJA/viewform" target="_blank">Fill out our Volunteer Form</a>\n\nOr contact Ms. Shruti Oswal:\n📞 +91 9665820463\n📧 chipnagpurngo@gmail.com\n\nVolunteer activities include tree planting, education programs, wildlife monitoring, and community outreach!`,
+            
+            donate: `Thank you for wanting to support us, {name}! 💚\n\n<b>Bank Details:</b>\nBallygunj Society for Children in Pain\nAxis Bank (Civil Lines, Nagpur)\nA/c: 913010035896715\nIFSC: UTIB0000048\n\n👉 <a href="https://wa.me/919665820463?text=Hello!%20I%20would%20like%20to%20donate%20to%20NISARGAVEDH" target="_blank">Donate via WhatsApp</a>\n\n<b>Contact:</b> Ms. Shruti Oswal\n📞 +91 9665820463\n\n✅ 80G tax benefits available!`,
+            
+            about: `Nisargavedh is an environmental initiative by CHIP Nagpur! 🌿\n\nWe focus on:\n• Ecosystem Restoration\n• Education Beyond Walls\n• Sustainable Livelihood\n\n<b>Our Impact:</b>\n🌳 27,500+ trees planted\n👧 12,000+ children impacted\n👥 3,500+ volunteers\n\n👉 <a href="about.html">Learn more about us</a>`,
+            
+            programs: `Our Programs, {name}! 🌍\n\n🌳 <b>Afforestation</b> - Tree planting & habitat restoration\n📚 <b>Education</b> - Nature-based learning for children\n🏘️ <b>Rural Welfare</b> - Supporting local communities\n💧 <b>Water Conservation</b> - Protecting water resources\n🏙️ <b>Urban Consciousness</b> - City environmental awareness\n\n👉 <a href="nisargavedh.html">View all Programs</a>`,
+            
+            contact: `Here's how to reach us, {name}! 📞\n\n<b>Office:</b>\n3A, Nawab Area, Tilak Nagar\nNagpur, 440010 (MS), INDIA\n\n📞 +91 9665820463\n📧 chipnagpurngo@gmail.com\n\n👉 <a href="https://wa.me/919665820463" target="_blank">Chat on WhatsApp</a>\n👉 <a href="contact.html">Contact Page</a>`,
+            
+            tree: `Great question, {name}! 🌳\n\nThe cost of 1 plant is <b>₹500/-</b> which includes:\n• Sapling procurement\n• 10-12 months nursery care\n• Pit digging & compost\n• Fencing & Drip irrigation\n• Security & manpower\n\nYou can contribute ₹1,000 for 5 plants!\n\n👉 <a href="https://wa.me/919665820463?text=Hello!%20I%20want%20to%20sponsor%20tree%20planting" target="_blank">Sponsor Trees via WhatsApp</a>`,
+            
+            location: `Our locations, {name}! 📍\n\n<b>Office:</b>\n3A, Nawab Area, Tilak Nagar\nNagpur, 440010\n\n<b>Project Site:</b>\nVillage Wakeshwar\nNagpur-Chandrapur Highway\n\n👉 <a href="contact.html">View on Map</a>`,
+            
+            product: `Our Products, {name}! 🌿\n\n<b>Vermi-Compost</b>\n• 100% Organic & Nutrient Rich\n• 2 tonnes produced weekly\n• Minimum order: 5kg\n\nHelp make our forest self-sufficient!\n\n👉 <a href="https://wa.me/919665820463?text=Hello!%20I%20want%20to%20order%20Vermi-Compost" target="_blank">Order via WhatsApp</a>\n👉 <a href="products.html">View Products Page</a>`,
+            
+            default: `Thanks for your message, {name}! 🦉\n\nI can help you with:\n• <a href="https://docs.google.com/forms/d/e/1FAIpQLSdpAGvizks5tEp9SIdIjATUpUbQwAIp-7jscLe1xfjCRz8RJA/viewform" target="_blank">Volunteer Registration</a>\n• <a href="involved.html">Donation Information</a>\n• <a href="nisargavedh.html">Our Programs</a>\n• <a href="products.html">Products</a>\n• <a href="contact.html">Contact Details</a>\n\nOr call us at +91 9665820463!`
+        };
+
+        function toggleChatbot() {
+            const chatbot = document.getElementById('chatbot');
+            const toggle = document.getElementById('chatbotToggle');
+            chatbot.classList.toggle('active');
+            toggle.classList.toggle('hidden');
+        }
+
+        function refreshChat() {
+            const messagesDiv = document.getElementById('chatMessages');
+            messagesDiv.innerHTML = `<div class="chat-message bot-message">
+                <span class="bot-icon">🦉</span>
+                <div class="message-content">Hello! I'm the Nisargavedh Assistant. What's your name?</div>
+            </div>`;
+            userName = '';
+            chatState = 'askName';
+        }
+
+        function handleKeyPress(e) {
+            if (e.key === 'Enter') sendMessage();
+        }
+
+        function addMessage(text, isUser) {
+            const messagesDiv = document.getElementById('chatMessages');
+            const msgDiv = document.createElement('div');
+            msgDiv.className = isUser ? 'chat-message user-message' : 'chat-message bot-message';
+            
+            if (isUser) {
+                msgDiv.innerHTML = `<div class="message-content">${text}</div>`;
+            } else {
+                msgDiv.innerHTML = `<span class="bot-icon">🦉</span><div class="message-content">${text.replace(/\n/g, '<br>')}</div>`;
+            }
+            
+            messagesDiv.appendChild(msgDiv);
+            messagesDiv.scrollTop = messagesDiv.scrollHeight;
+        }
+
+        function getResponse(text) {
+            const lower = text.toLowerCase();
+            
+            if (lower.includes('volunteer') || lower.includes('join') || lower.includes('help')) {
+                return responses.volunteer;
+            } else if (lower.includes('donate') || lower.includes('donation') || lower.includes('money') || lower.includes('contribute') || lower.includes('bank')) {
+                return responses.donate;
+            } else if (lower.includes('about') || lower.includes('nisargavedh') || lower.includes('what is') || lower.includes('who are')) {
+                return responses.about;
+            } else if (lower.includes('program') || lower.includes('project') || lower.includes('activities') || lower.includes('work')) {
+                return responses.programs;
+            } else if (lower.includes('contact') || lower.includes('phone') || lower.includes('email') || lower.includes('call')) {
+                return responses.contact;
+            } else if (lower.includes('tree') || lower.includes('plant') || lower.includes('cost') || lower.includes('price') || lower.includes('500')) {
+                return responses.tree;
+            } else if (lower.includes('location') || lower.includes('address') || lower.includes('where') || lower.includes('office') || lower.includes('site')) {
+                return responses.location;
+            } else if (lower.includes('product') || lower.includes('vermi') || lower.includes('compost') || lower.includes('buy') || lower.includes('order')) {
+                return responses.product;
+            } else if (lower.includes('hi') || lower.includes('hello') || lower.includes('hey')) {
+                return `Hello {name}! 👋 How can I help you today? Ask me about volunteering, donations, programs, products, or anything about Nisargavedh!`;
+            } else if (lower.includes('thank')) {
+                return `You're welcome, {name}! 😊 Feel free to ask if you have more questions. Together we can make a difference! 🌿`;
+            } else if (lower.includes('bye') || lower.includes('goodbye')) {
+                return `Goodbye, {name}! 🦉 Thank you for your interest in Nisargavedh. Hope to see you soon! 🌳`;
+            }
+            
+            return responses.default;
+        }
+
+        function sendQuickQuery(query) {
+            if (chatState === 'askName') {
+                addMessage("Please tell me your name first! 😊", false);
+                return;
+            }
+            document.getElementById('chatInput').value = query;
+            sendMessage();
+        }
+
+        function sendMessage() {
+            const input = document.getElementById('chatInput');
+            const text = input.value.trim();
+            if (!text) return;
+
+            addMessage(text, true);
+            input.value = '';
+
+            if (chatState === 'askName') {
+                userName = text;
+                chatState = 'chat';
+                saveToSheet(userName, '[New User Started Chat]');
+                setTimeout(() => {
+                    addMessage(`Nice to meet you, ${userName}! 🌿 How can I help you today? You can ask me about volunteering, donations, our programs, or anything about Nisargavedh!`, false);
+                }, 500);
+                return;
+            }
+
+            // Save message to sheet
+            saveToSheet(userName, text);
+
+            // Show typing indicator then respond
+            setTimeout(() => {
+                const response = getResponse(text).replace(/{name}/g, userName);
+                addMessage(response, false);
+            }, 800);
+        }
+    </script>
+</body>
+</html>
