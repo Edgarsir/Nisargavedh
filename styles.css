@@ -180,6 +180,7 @@ nav a.active {
     padding: 100px 0 80px;
     text-align: center;
     border-bottom: none;
+    min-height: auto;
 }
 
 .hero .container {
@@ -190,6 +191,7 @@ nav a.active {
     display: flex;
     flex-direction: column;
     align-items: center;
+    min-height: auto;
 }
 
 .hero-subtitle {
@@ -602,7 +604,7 @@ section {
     position: fixed;
     top: 120px;
     right: 20px;
-    z-index: 99;
+    z-index: 1000;
     background: linear-gradient(45deg, var(--olive-green), var(--moss-green));
     border-color: var(--olive-green);
     color: white;
@@ -621,7 +623,6 @@ section {
 .floating-btn::before {
     content: '';
     display: none;
-}
 }
 
 .floating-btn::after {
@@ -742,8 +743,6 @@ section {
     gap: 40px;
     max-width: 900px;
     margin: 0 auto;
-}
-    gap: 50px;
 }
 
 .contact-info h3 {
@@ -2395,7 +2394,7 @@ footer a {
     justify-content: center;
     font-size: 32px;
     box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
-    z-index: 1000;
+    z-index: 999;
     transition: all 0.3s ease;
     text-decoration: none;
     animation: whatsappPulse 2s infinite;
@@ -2418,11 +2417,13 @@ footer a {
 
 @media (max-width: 768px) {
     .whatsapp-float {
+        display: flex !important;
         bottom: 20px;
         right: 20px;
         width: 55px;
         height: 55px;
         font-size: 28px;
+        z-index: 999;
     }
 }
 
@@ -3266,9 +3267,11 @@ p {
     }
     
     .hero-description {
-        font-size: 15px;
+        font-size: 14px;
         text-align: justify;
         padding: 0 10px;
+        margin: 0 auto 20px;
+        line-height: 1.5;
     }
     
     .hero-title-wrapper {
@@ -3589,6 +3592,16 @@ p {
         width: fit-content !important;
         font-size: 12px;
         padding: 12px 25px;
+        animation: none !important;
+        box-shadow: 0 2px 8px rgba(74, 93, 35, 0.3) !important;
+    }
+    
+    .mobile-hero-btn::after {
+        display: none !important;
+    }
+    
+    .mobile-hero-btn:hover {
+        animation: none !important;
     }
     
     .floating-btn::before {
@@ -3633,6 +3646,17 @@ p {
         margin-right: auto !important;
         text-align: center !important;
         position: relative !important;
+    }
+
+    /* iPhone SE and very small devices */
+    @media (max-width: 375px) {
+        .hero-subtitle {
+            font-size: 7px !important;
+            letter-spacing: 0.5px !important;
+            padding: 0 15px !important;
+            word-wrap: break-word !important;
+            white-space: normal !important;
+        }
     }
     
     .hero-title-wrapper {

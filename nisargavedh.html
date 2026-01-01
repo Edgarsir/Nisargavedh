@@ -198,7 +198,7 @@
 
     <script>
         function toggleMenu() { document.getElementById('nav-menu').classList.toggle('active'); }
-        document.addEventListener('DOMContentLoaded', function() { document.querySelectorAll('.has-dropdown > a').forEach(function(d) { d.addEventListener('click', function(e) { if (window.innerWidth <= 768) { e.preventDefault(); this.parentElement.classList.toggle('open'); } }); }); });
+        document.addEventListener('DOMContentLoaded', function() { document.querySelectorAll('.has-dropdown > a').forEach(function(d) { const chevron = d.querySelector('.fa-chevron-down'); if (chevron) { chevron.addEventListener('click', function(e) { if (window.innerWidth <= 768) { e.preventDefault(); e.stopPropagation(); d.parentElement.classList.toggle('open'); } }); } }); });
         const SHEET_URL = 'https://script.google.com/macros/s/AKfycbyXKJdoMzwtQktTbDA3gCqtcMglqteq8pbPMXomdhY-uWW3iqa-vYS4_41sc8xwmZLD/exec';
         function saveToSheet(n, m) { fetch(SHEET_URL, { method: 'POST', mode: 'no-cors', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ name: n, message: m, page: window.location.pathname }) }).catch(e => console.log(e)); }
         let userName = '', chatState = 'askName';

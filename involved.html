@@ -219,16 +219,20 @@
             document.getElementById('nav-menu').classList.toggle('active');
         }
 
-        // Mobile dropdown toggle
+        // Mobile dropdown - make chevron toggle, but keep links clickable
         document.addEventListener('DOMContentLoaded', function() {
             const dropdowns = document.querySelectorAll('.has-dropdown > a');
             dropdowns.forEach(function(dropdown) {
-                dropdown.addEventListener('click', function(e) {
-                    if (window.innerWidth <= 768) {
-                        e.preventDefault();
-                        this.parentElement.classList.toggle('open');
-                    }
-                });
+                const chevron = dropdown.querySelector('.fa-chevron-down');
+                if (chevron) {
+                    chevron.addEventListener('click', function(e) {
+                        if (window.innerWidth <= 768) {
+                            e.preventDefault();
+                            e.stopPropagation();
+                            dropdown.parentElement.classList.toggle('open');
+                        }
+                    });
+                }
             });
         });
 
