@@ -202,9 +202,6 @@ nav a.active {
     max-width: 100%;
     display: block;
     padding: 0 !important;
-    position: relative;
-    left: 70.5%;
-    transform: translateX(-50%);
 }
 
 .hero h1 {
@@ -3440,8 +3437,13 @@ p {
     
     .hero-subtitle {
         font-size: 10px;
-        left: 48% !important;
-        transform: translateX(-50%) !important;
+        left: auto !important;
+        right: auto !important;
+        transform: none !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        text-align: center !important;
+        position: relative !important;
     }
     
     .hero-title-wrapper {
