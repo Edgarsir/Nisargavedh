@@ -187,6 +187,9 @@ nav a.active {
     padding-left: 30px;
     padding-right: 30px;
     max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .hero-subtitle {
@@ -201,7 +204,8 @@ nav a.active {
     width: 100%;
     max-width: 100%;
     display: block;
-    padding: 0 !important;
+    padding: auto;
+    
 }
 
 .hero h1 {
@@ -603,17 +607,21 @@ section {
     border-color: var(--olive-green);
     color: white;
     font-size: 14px;
-    padding: 14px 35px 14px 40px;
+    padding: 14px 35px;
     overflow: hidden;
     animation: pulseGreen 2s infinite, glowGreen 1.5s ease-in-out infinite alternate;
     box-shadow: 0 4px 15px rgba(74, 93, 35, 0.4);
 }
 
+/* Hide mobile hero button on desktop */
+.mobile-hero-btn {
+    display: none !important;
+}
+
 .floating-btn::before {
-    content: '🌱';
-    position: absolute;
-    left: 15px;
-    animation: leafsway 1.5s ease-in-out infinite;
+    content: '';
+    display: none;
+}
 }
 
 .floating-btn::after {
@@ -645,9 +653,96 @@ section {
 }
 
 /* Contact Section */
+.contact-section-wrapper {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.contact-intro {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.contact-intro h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 36px;
+    color: var(--dark-brown);
+    margin-bottom: 15px;
+}
+
+.contact-intro p {
+    font-size: 16px;
+    color: var(--medium-brown);
+    line-height: 1.7;
+    text-align: center;
+}
+
+.contact-info-simple {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 50px 40px;
+    margin-bottom: 50px;
+}
+
+.contact-item-simple {
+    text-align: center;
+}
+
+.contact-item-simple i {
+    font-size: 32px;
+    color: var(--olive-green);
+    margin-bottom: 12px;
+}
+
+.contact-item-simple h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    color: var(--dark-brown);
+    margin-bottom: 10px;
+    margin-top: 5px;
+}
+
+.contact-item-simple p {
+    color: var(--medium-brown);
+    font-size: 15px;
+    line-height: 1.7;
+    margin: 0;
+    text-align: center;
+}
+
+.whatsapp-cta {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.btn-whatsapp {
+    background: #25D366;
+    color: white;
+    border: none;
+    padding: 16px 40px;
+    font-size: 16px;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.3s ease;
+}
+
+.btn-whatsapp:hover {
+    background: #128C7E;
+    transform: scale(1.05);
+}
+
+.btn-whatsapp i {
+    font-size: 20px;
+}
+
 .contact-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
+    gap: 40px;
+    max-width: 900px;
+    margin: 0 auto;
+}
     gap: 50px;
 }
 
@@ -693,6 +788,57 @@ section {
     padding: 40px;
     background: var(--bg-cream);
     background-image: url('https://www.transparenttextures.com/patterns/natural-paper.png');
+}
+
+/* Why Contact Us Section */
+.why-contact-section {
+    margin-top: 30px;
+}
+
+.why-contact-section h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    color: var(--dark-brown);
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.why-contact-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+}
+
+.why-contact-item {
+    background: var(--bg-cream);
+    border: 2px solid var(--border-brown);
+    padding: 25px;
+    transition: all 0.3s ease;
+}
+
+.why-contact-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    border-color: var(--teal-accent);
+}
+
+.why-icon {
+    font-size: 40px;
+    margin-bottom: 15px;
+}
+
+.why-contact-item h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    color: var(--dark-brown);
+    margin-bottom: 10px;
+}
+
+.why-contact-item p {
+    color: var(--medium-brown);
+    font-size: 14px;
+    line-height: 1.6;
+    margin: 0;
 }
 
 .form-group {
@@ -3189,10 +3335,16 @@ p {
     .vmg-item {
         flex-direction: column;
         text-align: center;
+        display: flex !important;
+    }
+    
+    .vmg-image {
+        order: 2;
     }
     
     .vmg-content {
         text-align: justify;
+        order: 1;
     }
     
     .vmg-content h2 {
@@ -3304,6 +3456,28 @@ p {
     }
     
     /* Contact grid */
+    .contact-info-simple {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+    
+    .contact-item-simple {
+        padding: 0 15px;
+    }
+    
+    .contact-item-simple i {
+        font-size: 28px;
+    }
+    
+    .contact-item-simple h4 {
+        font-size: 20px;
+    }
+    
+    .btn-whatsapp {
+        width: 100%;
+        justify-content: center;
+    }
+    
     .contact-info h3 {
         text-align: center;
     }
@@ -3321,6 +3495,15 @@ p {
     
     .contact-form {
         padding: 25px 20px;
+    }
+    
+    .why-contact-list {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    
+    .why-contact-item {
+        padding: 20px;
     }
     
     /* Maps section */
@@ -3393,13 +3576,19 @@ p {
         font-size: 14px;
     }
     
-    /* Floating buttons mobile */
-    .floating-btn {
-        top: auto;
-        bottom: 160px;
-        right: 15px;
+    /* Hide desktop floating button on mobile */
+    .floating-btn:not(.mobile-hero-btn) {
+        display: none !important;
+    }
+    
+    /* Show mobile hero button */
+    .mobile-hero-btn {
+        position: static !important;
+        display: block !important;
+        margin: 20px auto 0 auto !important;
+        width: fit-content !important;
         font-size: 12px;
-        padding: 12px 25px 12px 30px;
+        padding: 12px 25px;
     }
     
     .floating-btn::before {
@@ -3665,4 +3854,12 @@ p {
         margin-left: auto;
         margin-right: 0;
     }
+}
+.textcenter{
+    display: flex;
+    justify-content: center;
+}
+
+.mymaintitle{
+        font-family: 'Fredericka the Great', cursive !important;
 }
