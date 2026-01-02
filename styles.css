@@ -87,6 +87,11 @@ nav ul li {
     position: relative;
 }
 
+/* Hide mobile-only items on desktop */
+.mobile-only {
+    display: none;
+}
+
 /* Dropdown styles */
 nav ul li.has-dropdown > a {
     display: flex;
@@ -1024,6 +1029,16 @@ footer a {
     .mobile-menu-btn {
         display: block;
     }
+    
+    /* Hide desktop dropdown, show mobile separate buttons */
+    .desktop-only {
+        display: none !important;
+    }
+    
+    .mobile-only {
+        display: block !important;
+    }
+    
     nav ul {
         display: none;
         position: absolute;
@@ -1035,7 +1050,7 @@ footer a {
         padding: 10px 20px;
         border-bottom: 2px solid var(--border-brown);
         gap: 0;
-        z-index: 1000;
+        z-index: 1001;
     }
     nav ul.active {
         display: flex;
@@ -3594,6 +3609,7 @@ p {
         padding: 12px 25px;
         animation: none !important;
         box-shadow: 0 2px 8px rgba(74, 93, 35, 0.3) !important;
+        z-index: 1 !important;
     }
     
     .mobile-hero-btn::after {
