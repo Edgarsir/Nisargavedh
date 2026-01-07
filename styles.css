@@ -897,7 +897,7 @@ section {
 }
 
 .stat-item {
-    color: white;
+    color: #000000;
 }
 
 .stat-number {
@@ -905,13 +905,15 @@ section {
     font-size: 48px;
     font-weight: 700;
     margin-bottom: 10px;
+    color: #000000;
 }
 
 .stat-label {
     font-size: 14px;
     text-transform: uppercase;
     letter-spacing: 2px;
-    opacity: 0.9;
+    opacity: 1;
+    color: #000000;
 }
 
 /* Footer */
@@ -934,8 +936,8 @@ footer a {
 
 .footer-grid {
     display: grid;
-    grid-template-columns: 2fr 1fr 1fr 1fr;
-    gap: 50px;
+    grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
+    gap: 30px;
     margin-bottom: 40px;
 }
 
@@ -1015,7 +1017,7 @@ footer a {
         grid-template-columns: repeat(2, 1fr);
     }
     .footer-grid {
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr;
     }
     .stats-grid {
         grid-template-columns: repeat(2, 1fr);
@@ -1388,6 +1390,7 @@ footer a {
     color: var(--dark-brown);
     line-height: 1.7;
     margin-bottom: 10px;
+    text-align: left;
 }
 
 @media (max-width: 992px) {
@@ -3902,4 +3905,7 @@ p {
 
 .mymaintitle{
         font-family: 'Fredericka the Great', cursive !important;
+}
+.white{
+    color: #3d3229;
 }
