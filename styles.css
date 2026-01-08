@@ -3294,7 +3294,7 @@ p {
     }
     
     .hero-subtitle {
-        font-size: 9px;
+        font-size: 14px;
         letter-spacing: 1px;
         white-space: nowrap;
     }
@@ -3672,7 +3672,7 @@ p {
     }
     
     .hero-subtitle {
-        font-size: 10px;
+        font-size: 13px;
         left: auto !important;
         right: auto !important;
         transform: none !important;
@@ -3685,7 +3685,7 @@ p {
     /* iPhone SE and very small devices */
     @media (max-width: 375px) {
         .hero-subtitle {
-            font-size: 7px !important;
+            font-size: 12px !important;
             letter-spacing: 0.5px !important;
             padding: 0 15px !important;
             word-wrap: break-word !important;
