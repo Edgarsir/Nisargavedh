@@ -51,6 +51,95 @@ header {
     z-index: 100;
 }
 
+/* About page header with natural paper texture */
+.about-page header {
+    background-image: url('https://www.transparenttextures.com/patterns/natural-paper.png');
+}
+
+/* Team page header with natural paper texture */
+.team-page header {
+    background-image: url('https://www.transparenttextures.com/patterns/natural-paper.png');
+}
+
+/* Programs page header with natural paper texture */
+.programs-page header {
+    background-image: url('https://www.transparenttextures.com/patterns/natural-paper.png');
+}
+
+/* Documentary page header with natural paper texture */
+.documentary-page header {
+    background-image: url('https://www.transparenttextures.com/patterns/natural-paper.png');
+}
+
+/* Afforestation page header with natural paper texture */
+.afforestation-page header {
+    background-image: url('https://www.transparenttextures.com/patterns/natural-paper.png');
+}
+
+/* Education page header with natural paper texture */
+.education-page header {
+    background-image: url('https://www.transparenttextures.com/patterns/natural-paper.png');
+}
+
+/* Rural Welfare page header with natural paper texture */
+.rural-welfare-page header {
+    background-image: url('https://www.transparenttextures.com/patterns/natural-paper.png');
+}
+
+/* Urban Consciousness page header with natural paper texture */
+.urban-consciousness-page header {
+    background-image: url('https://www.transparenttextures.com/patterns/natural-paper.png');
+}
+
+/* Water Conservation page header with natural paper texture */
+.water-conservation-page header {
+    background-image: url('https://www.transparenttextures.com/patterns/natural-paper.png');
+}
+
+/* Gallery page header with natural paper texture */
+.gallery-page header {
+    background-image: url('https://www.transparenttextures.com/patterns/natural-paper.png');
+}
+
+/* Gallery page body with natural paper texture */
+.gallery-page {
+    background-color: var(--bg-paper) !important;
+    background-image: url('https://www.transparenttextures.com/patterns/natural-paper.png') !important;
+}
+
+/* Gallery page hero with natural paper texture */
+.gallery-page .page-hero-light {
+    background-color: var(--bg-paper) !important;
+    background-image: url('https://www.transparenttextures.com/patterns/natural-paper.png') !important;
+}
+
+/* Products page header with natural paper texture */
+.products-page header {
+    background-image: url('https://www.transparenttextures.com/patterns/natural-paper.png');
+}
+
+/* Products page body with natural paper texture */
+.products-page {
+    background-color: var(--bg-paper) !important;
+    background-image: url('https://www.transparenttextures.com/patterns/natural-paper.png') !important;
+}
+
+/* Products page hero with natural paper texture */
+.products-page .page-hero-light {
+    background-color: var(--bg-paper) !important;
+    background-image: url('https://www.transparenttextures.com/patterns/natural-paper.png') !important;
+}
+
+/* Get Involved page header with natural paper texture */
+.involved-page header {
+    background-image: url('https://www.transparenttextures.com/patterns/natural-paper.png');
+}
+
+/* Contact page header with natural paper texture */
+.contact-page header {
+    background-image: url('https://www.transparenttextures.com/patterns/natural-paper.png');
+}
+
 .header-content {
     display: flex;
     justify-content: space-between;
@@ -344,6 +433,83 @@ section {
 }
 
 /* About Section */
+.about-story-section {
+    background-color: var(--bg-paper);
+    background-image: url('https://www.transparenttextures.com/patterns/natural-paper.png');
+}
+
+/* Team Section */
+.team-section {
+    background-color: var(--bg-paper);
+    background-image: url('https://www.transparenttextures.com/patterns/natural-paper.png');
+}
+
+/* Programs Section */
+.programs-content-section {
+    background-color: var(--bg-paper);
+    background-image: url('https://www.transparenttextures.com/patterns/natural-paper.png');
+}
+
+/* Documentary Section */
+.documentary-content-section {
+    background-color: var(--bg-paper);
+    background-image: url('https://www.transparenttextures.com/patterns/natural-paper.png');
+}
+
+/* Afforestation Section */
+.afforestation-content-section {
+    background-color: var(--bg-paper);
+    background-image: url('https://www.transparenttextures.com/patterns/natural-paper.png');
+}
+
+/* Education Section */
+.education-content-section {
+    background-color: var(--bg-paper);
+    background-image: url('https://www.transparenttextures.com/patterns/natural-paper.png');
+}
+
+/* Rural Welfare Section */
+.rural-welfare-content-section {
+    background-color: var(--bg-paper);
+    background-image: url('https://www.transparenttextures.com/patterns/natural-paper.png');
+}
+
+/* Urban Consciousness Section */
+.urban-consciousness-content-section {
+    background-color: var(--bg-paper);
+    background-image: url('https://www.transparenttextures.com/patterns/natural-paper.png');
+}
+
+/* Water Conservation Section */
+.water-conservation-content-section {
+    background-color: var(--bg-paper);
+    background-image: url('https://www.transparenttextures.com/patterns/natural-paper.png');
+}
+
+/* Gallery Section */
+.gallery-content-section {
+    background-color: var(--bg-paper) !important;
+    background-image: url('https://www.transparenttextures.com/patterns/natural-paper.png');
+}
+
+/* Products Section */
+.products-content-section {
+    background-color: var(--bg-paper) !important;
+    background-image: url('https://www.transparenttextures.com/patterns/natural-paper.png');
+}
+
+/* Get Involved Section */
+.involved-content-section {
+    background-color: var(--bg-paper);
+    background-image: url('https://www.transparenttextures.com/patterns/natural-paper.png');
+}
+
+/* Contact Section */
+.contact-content-section {
+    background-color: var(--bg-paper);
+    background-image: url('https://www.transparenttextures.com/patterns/natural-paper.png');
+}
+
 .about-content {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -549,15 +715,15 @@ section {
 }
 
 .btn-donate {
-    background: linear-gradient(45deg, var(--olive-green), var(--moss-green));
-    border-color: var(--olive-green);
+    background: linear-gradient(45deg, #FF6B35, #FF8C42);
+    border-color: #FF6B35;
     color: white;
     font-size: 16px;
     padding: 18px 50px 18px 45px;
     position: relative;
     overflow: hidden;
     animation: pulse 2s infinite, glow 1.5s ease-in-out infinite alternate;
-    box-shadow: 0 4px 15px rgba(74, 93, 35, 0.4);
+    box-shadow: 0 4px 15px rgba(255, 107, 53, 0.5);
 }
 
 .btn-donate::before {
@@ -580,8 +746,8 @@ section {
 }
 
 .btn-donate:hover {
-    background: linear-gradient(45deg, var(--moss-green), var(--olive-green));
-    border-color: var(--moss-green);
+    background: linear-gradient(45deg, #FF8C42, #FF6B35);
+    border-color: #FF8C42;
     transform: scale(1.08);
     box-shadow: 0 8px 25px rgba(74, 93, 35, 0.6);
 }
@@ -889,6 +1055,19 @@ section {
     background-color: var(--olive-green);
     padding: 60px 0;
     border-bottom: none;
+    position: relative;
+}
+
+.stats-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('https://www.transparenttextures.com/patterns/old-map.png');
+    opacity: 0.15;
+    pointer-events: none;
 }
 
 .stats-grid {
@@ -2055,9 +2234,9 @@ footer a {
     }
     
     .whatwedo-item img {
-        width: 200px;
-        height: 260px;
-        border-radius: 100px;
+        width: 100%;
+        height: auto;
+        border-radius: 10px;
     }
 }
 
@@ -3381,6 +3560,7 @@ p {
     .vmg-content {
         text-align: justify;
         order: 1;
+        padding: 0 20px;
     }
     
     .vmg-content h2 {
@@ -3778,8 +3958,8 @@ p {
     }
     
     .supporters-track img {
-        height: 50px;
-        margin: 0 15px;
+        height: 80px;
+        margin: 0 20px;
     }
 }
 
