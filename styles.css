@@ -2739,6 +2739,7 @@ footer a {
     background: linear-gradient(45deg, var(--olive-green), var(--moss-green));
     border-color: var(--olive-green);
     color: white;
+    animation: blink 0.5s ease-in-out infinite;
 }
 
 .btn-volunteer:hover {
