@@ -2086,7 +2086,7 @@ footer a {
 
 .supporters-section h3 {
     font-family: 'Fredericka the Great', cursive;
-    font-size: 28px;
+    font-size: 32px;
     color: #3d4d1c;
     margin-bottom: 25px;
 }
@@ -2099,7 +2099,7 @@ footer a {
 .supporters-track {
     display: flex;
     gap: 40px;
-    animation: marquee 30s linear infinite;
+    animation: marquee 20s linear infinite;
 }
 
 .supporters-track img {
@@ -3578,7 +3578,7 @@ p {
     }
     
     .vmg-content h2 {
-        text-align: left;
+        text-align: center;
     }
     
     .vmg-content ul {
@@ -3968,7 +3968,7 @@ p {
 /* Supporters marquee mobile */
 @media (max-width: 768px) {
     .supporters-section h3 {
-        font-size: 20px;
+        font-size: 32px;
     }
     
     .supporters-track img {
