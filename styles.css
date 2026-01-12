@@ -715,15 +715,15 @@ section {
 }
 
 .btn-donate {
-    background: linear-gradient(45deg, #FF6B35, #FF8C42);
-    border-color: #FF6B35;
+    background: linear-gradient(45deg, var(--olive-green), var(--moss-green));
+    border-color: var(--olive-green);
     color: white;
     font-size: 16px;
     padding: 18px 50px 18px 45px;
     position: relative;
     overflow: hidden;
-    animation: pulse 2s infinite, glow 1.5s ease-in-out infinite alternate;
-    box-shadow: 0 4px 15px rgba(255, 107, 53, 0.5);
+    animation: pulse 2s infinite, glow 1.5s ease-in-out infinite alternate, blink 0.5s ease-in-out infinite;
+    box-shadow: 0 4px 15px rgba(74, 93, 35, 0.4);
 }
 
 .btn-donate::before {
@@ -746,10 +746,21 @@ section {
 }
 
 .btn-donate:hover {
-    background: linear-gradient(45deg, #FF8C42, #FF6B35);
-    border-color: #FF8C42;
+    background: linear-gradient(45deg, var(--moss-green), var(--olive-green));
+    border-color: var(--moss-green);
     transform: scale(1.08);
     box-shadow: 0 8px 25px rgba(74, 93, 35, 0.6);
+}
+
+@keyframes blink {
+    0%, 100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.05);
+        opacity: 0.85;
+    }
 }
 
 @keyframes pulse {
@@ -2092,7 +2103,7 @@ footer a {
 }
 
 .supporters-track img {
-    height: 80px;
+    height: 120px;
     width: auto;
     object-fit: contain;
     flex-shrink: 0;
@@ -2269,6 +2280,10 @@ footer a {
     height: auto;
 }
 
+.vmg-content {
+    text-align: left;
+}
+
 .vmg-content h2 {
     font-family: 'Fredericka the Great', cursive;
     font-size: 32px;
@@ -2284,24 +2299,23 @@ footer a {
 }
 
 .vmg-content ul {
-    list-style: none;
-    padding: 0;
+    list-style: disc;
+    padding-left: 20px;
+    margin-left: 0;
 }
 
 .vmg-content ul li {
     font-size: 15px;
     color: var(--dark-brown);
     line-height: 1.7;
-    padding: 10px 0 10px 25px;
+    padding: 10px 0;
     position: relative;
+    margin-left: 0;
 }
 
 .vmg-content ul li::before {
-    content: '✓';
-    position: absolute;
-    left: 0;
-    color: var(--olive-green);
-    font-weight: bold;
+    content: '';
+    display: none;
 }
 
 @media (max-width: 768px) {
@@ -3564,7 +3578,7 @@ p {
     }
     
     .vmg-content h2 {
-        text-align: center;
+        text-align: left;
     }
     
     .vmg-content ul {
