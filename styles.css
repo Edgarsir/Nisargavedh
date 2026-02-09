@@ -107,10 +107,28 @@ header {
     background-image: url('https://www.transparenttextures.com/patterns/natural-paper.png') !important;
 }
 
-/* Gallery page hero with natural paper texture */
+/* Gallery page hero with banner image */
 .gallery-page .page-hero-light {
-    background-color: var(--bg-paper) !important;
-    background-image: url('https://www.transparenttextures.com/patterns/natural-paper.png') !important;
+    background: none !important;
+    padding: 0 !important;
+}
+
+.gallery-page .page-hero-light .container {
+    max-width: 100% !important;
+    padding: 0 !important;
+    text-align: center;
+}
+
+.gallery-banner-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 0;
+}
+
+.gallery-page .page-hero-light h1 {
+    margin-top: 30px;
+    padding: 0 20px;
 }
 
 /* Products page header with natural paper texture */
@@ -1438,6 +1456,44 @@ footer a {
     margin-top: 0;
 }
 
+/* Project Carousel */
+.project-carousel {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+}
+
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(61, 77, 28, 0.8);
+    color: white;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.3s;
+    z-index: 10;
+}
+
+.carousel-btn:hover {
+    background: rgba(61, 77, 28, 1);
+}
+
+.prev-btn {
+    left: 10px;
+}
+
+.next-btn {
+    right: 10px;
+}
+
 .project-description {
     display: flex;
     align-items: center;
@@ -1971,6 +2027,13 @@ footer a {
     border: 2px solid var(--border-brown);
 }
 
+/* Show full images for specific programs */
+.program-image img[src="afforestation-banner.jpg"],
+.program-image img[src="urban-consciousness-banner.jpg"] {
+    height: auto;
+    object-fit: contain;
+}
+
 .program-content h3 {
     font-family: 'Playfair Display', serif;
     font-size: 24px;
@@ -2024,12 +2087,16 @@ footer a {
     order: 1;
 }
 
-.project-advisor {
+.project-media {
     order: 2;
 }
 
-.governing-members {
+.project-advisor {
     order: 3;
+}
+
+.governing-members {
+    order: 4;
 }
 
 .team-member-image img {
@@ -3105,13 +3172,11 @@ footer a {
     position: fixed;
     bottom: 100px;
     left: 30px;
-    width: 65px;
-    height: 65px;
-    border-radius: 50%;
-    background: linear-gradient(135deg, var(--olive-green), var(--moss-green));
+    width: 80px;
+    height: 80px;
+    background: transparent;
     border: none;
     cursor: pointer;
-    box-shadow: 0 4px 20px rgba(74, 93, 35, 0.4);
     z-index: 1001;
     transition: all 0.3s ease;
     animation: owlBounce 2s infinite;
@@ -3119,7 +3184,53 @@ footer a {
 
 .chatbot-toggle:hover {
     transform: scale(1.1);
-    box-shadow: 0 6px 25px rgba(74, 93, 35, 0.6);
+}
+
+.chatbot-toggle::before {
+    content: "I am Nisargavedh Chatbot! Ask me anything related to Nisargavedh";
+    position: absolute;
+    bottom: 95px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: white;
+    color: var(--dark-brown);
+    padding: 15px 20px;
+    border-radius: 15px;
+    font-size: 13px;
+    font-weight: 500;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    border: 2px solid var(--olive-green);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    z-index: 1002;
+    max-width: 250px;
+    white-space: normal;
+    text-align: center;
+    line-height: 1.5;
+}
+
+.chatbot-toggle::after {
+    content: "";
+    position: absolute;
+    bottom: 85px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 10px solid white;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    z-index: 1002;
+    filter: drop-shadow(0 2px 2px rgba(0,0,0,0.1));
+}
+
+.chatbot-toggle:hover::before,
+.chatbot-toggle:hover::after {
+    opacity: 1;
 }
 
 .chatbot-toggle.hidden {
@@ -3128,7 +3239,17 @@ footer a {
 }
 
 .owl-icon {
-    font-size: 32px;
+    display: inline-block;
+    width: 80px;
+    height: 80px;
+    background-image: url('chatbot-owl.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    font-size: 0;
+    line-height: 0;
+    text-indent: -9999px;
+    overflow: hidden;
 }
 
 @keyframes owlBounce {
@@ -3214,8 +3335,19 @@ footer a {
 }
 
 .bot-icon {
-    font-size: 24px;
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background-image: url('chatbot-owl.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
     margin-right: 10px;
+    flex-shrink: 0;
+    font-size: 0;
+    line-height: 0;
+    text-indent: -9999px;
+    overflow: hidden;
 }
 
 .message-content {
@@ -3322,12 +3454,13 @@ footer a {
     .chatbot-toggle {
         left: 15px;
         bottom: 80px;
-        width: 55px;
-        height: 55px;
+        width: 65px;
+        height: 65px;
     }
     
     .owl-icon {
-        font-size: 26px;
+        width: 45px;
+        height: 45px;
     }
 }
 
@@ -4014,22 +4147,16 @@ p {
 
 .progress-stats-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
-    max-width: 1000px;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    max-width: 1200px;
     margin: 0 auto 50px;
 }
 
 .progress-stat-card {
     background: var(--bg-cream);
     border: 2px solid var(--border-brown);
-    padding: 30px 20px;
-    transition: all 0.3s ease;
-}
-
-.progress-stat-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    padding: 20px 15px;
 }
 
 .stat-icon {
@@ -4052,12 +4179,14 @@ p {
     color: var(--dark-brown);
     font-weight: 600;
     margin-bottom: 10px;
+    text-align: center;
 }
 
 .stat-desc {
     font-size: 14px;
     color: var(--medium-brown);
     line-height: 1.6;
+    text-align: center;
 }
 
 .progress-cta {

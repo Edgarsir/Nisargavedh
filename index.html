@@ -63,7 +63,7 @@
             <div class="hero-image-section">
                 <div class="hero-image hero-video">
                     <video id="heroVideo" autoplay muted loop playsinline>
-                        <source src="videoplayback.mp4" type="video/mp4">
+                        <source src="nisargavedh-landing.mp4" type="video/mp4">
                         Your browser does not support the video tag.
                     </video>
                     <button class="video-sound-btn" onclick="toggleSound()">
@@ -213,7 +213,15 @@
             <div class="latest-project supporters-section">
                 <a href="https://wa.me/919665820463?text=Hello!%20I%20would%20like%20to%20donate%20to%20NISARGAVEDH" class="btn btn-donate" target="_blank">Donate Now</a>
                 <h3>Latest Project</h3>
-                <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Team working on conservation">
+                <div class="project-carousel">
+                    <button class="carousel-btn prev-btn" onclick="changeProjectImage(-1)">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <img id="project-image" src="project-1.jpg" alt="Latest Project">
+                    <button class="carousel-btn next-btn" onclick="changeProjectImage(1)">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
             </div>
             <div class="project-description">
                 <p>Our newest initiative focuses on restoring mangrove ecosystems along coastal regions. These vital habitats protect shorelines from erosion, provide nurseries for marine life, and store significant amounts of carbon. Join us in this critical mission to preserve these natural wonders for future generations.</p>
@@ -316,16 +324,6 @@
                     </ul>
                 </div>
                 <div class="footer-links">
-                    <h4>Credentials</h4>
-                    <ul>
-                        <li><a href="#">Registration Certificate</a></li>
-                        <li><a href="#">80G Certificate</a></li>
-                        <li><a href="#">FCRA Certificate</a></li>
-                        <li><a href="#">TPA</a></li>
-                        <li><a href="#">MOUs</a></li>
-                    </ul>
-                </div>
-                <div class="footer-links">
                     <h4>Contact Info</h4>
                     <ul>
                         <li>+91 9665820463</li>
@@ -360,6 +358,17 @@
                 }
             });
         });
+
+        // Project Image Carousel
+        const projectImages = ['project-1.jpg', 'project-2.jpg'];
+        let currentProjectIndex = 0;
+
+        function changeProjectImage(direction) {
+            currentProjectIndex += direction;
+            if (currentProjectIndex >= projectImages.length) currentProjectIndex = 0;
+            if (currentProjectIndex < 0) currentProjectIndex = projectImages.length - 1;
+            document.getElementById('project-image').src = projectImages[currentProjectIndex];
+        }
 
         function toggleSound() {
             var video = document.getElementById('heroVideo');
