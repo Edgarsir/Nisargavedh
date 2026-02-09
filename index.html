@@ -62,12 +62,15 @@
             <a href="involved.html" class="btn floating-btn mobile-hero-btn">Get Involved</a>
             <div class="hero-image-section">
                 <div class="hero-image hero-video">
-                    <video id="heroVideo" autoplay muted loop playsinline>
+                    <video id="heroVideo" autoplay muted loop playsinline onclick="openVideoPopup('heroVideo')">
                         <source src="nisargavedh-landing.mp4" type="video/mp4">
                         Your browser does not support the video tag.
                     </video>
                     <button class="video-sound-btn" onclick="toggleSound()">
                         <i class="fas fa-volume-mute" id="soundIcon"></i>
+                    </button>
+                    <button class="video-fullscreen-btn" onclick="openVideoPopup('heroVideo')" title="View Fullscreen">
+                        <i class="fas fa-expand"></i>
                     </button>
                 </div>
                 <div class="hero-message">
@@ -213,14 +216,9 @@
             <div class="latest-project supporters-section">
                 <a href="https://wa.me/919665820463?text=Hello!%20I%20would%20like%20to%20donate%20to%20NISARGAVEDH" class="btn btn-donate" target="_blank">Donate Now</a>
                 <h3>Latest Project</h3>
-                <div class="project-carousel">
-                    <button class="carousel-btn prev-btn" onclick="changeProjectImage(-1)">
-                        <i class="fas fa-chevron-left"></i>
-                    </button>
-                    <img id="project-image" src="project-1.jpg" alt="Latest Project">
-                    <button class="carousel-btn next-btn" onclick="changeProjectImage(1)">
-                        <i class="fas fa-chevron-right"></i>
-                    </button>
+                <div class="project-images-grid">
+                    <img src="project-1.jpg" alt="Latest Project 1">
+                    <img src="project-2.jpg" alt="Latest Project 2">
                 </div>
             </div>
             <div class="project-description">
@@ -359,17 +357,7 @@
             });
         });
 
-        // Project Image Carousel
-        const projectImages = ['project-1.jpg', 'project-2.jpg'];
-        let currentProjectIndex = 0;
-
-        function changeProjectImage(direction) {
-            currentProjectIndex += direction;
-            if (currentProjectIndex >= projectImages.length) currentProjectIndex = 0;
-            if (currentProjectIndex < 0) currentProjectIndex = projectImages.length - 1;
-            document.getElementById('project-image').src = projectImages[currentProjectIndex];
-        }
-
+        // Video sound toggle
         function toggleSound() {
             var video = document.getElementById('heroVideo');
             var icon = document.getElementById('soundIcon');
@@ -383,6 +371,67 @@
                 icon.classList.add('fa-volume-mute');
             }
         }
+
+        // Video Popup Functions
+        function openVideoPopup(videoId) {
+            const sourceVideo = document.getElementById(videoId);
+            const popup = document.getElementById('videoPopup');
+            const popupVideo = document.getElementById('popupVideo');
+            const popupSource = document.getElementById('popupVideoSource');
+            
+            // Get the video source
+            const videoSrc = sourceVideo.querySelector('source').src;
+            popupSource.src = videoSrc;
+            popupVideo.load();
+            
+            // Show popup and play video
+            popup.style.display = 'flex';
+            popupVideo.play();
+            
+            // Pause the original video
+            sourceVideo.pause();
+            
+            // Prevent body scroll
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeVideoPopup() {
+            const popup = document.getElementById('videoPopup');
+            const popupVideo = document.getElementById('popupVideo');
+            const heroVideo = document.getElementById('heroVideo');
+            
+            // Hide popup and stop video
+            popup.style.display = 'none';
+            popupVideo.pause();
+            popupVideo.currentTime = 0;
+            
+            // Resume original video if it exists
+            if (heroVideo) {
+                heroVideo.play();
+            }
+            
+            // Restore body scroll
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close popup when clicking outside the video
+        document.addEventListener('DOMContentLoaded', function() {
+            const popup = document.getElementById('videoPopup');
+            if (popup) {
+                popup.addEventListener('click', function(e) {
+                    if (e.target === popup) {
+                        closeVideoPopup();
+                    }
+                });
+            }
+        });
+
+        // Close popup with Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeVideoPopup();
+            }
+        });
 
         // Pie chart hover - highlight corresponding label
         document.querySelectorAll('.pie-segment').forEach(segment => {
@@ -403,6 +452,19 @@
             });
         });
     </script>
+
+    <!-- Video Popup Modal -->
+    <div id="videoPopup" class="video-popup-overlay">
+        <div class="video-popup-container">
+            <button class="video-popup-close" onclick="closeVideoPopup()">
+                <i class="fas fa-times"></i>
+            </button>
+            <video id="popupVideo" controls>
+                <source id="popupVideoSource" src="" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    </div>
 
     <!-- AI Chatbot -->
     <div class="chatbot-container" id="chatbot">

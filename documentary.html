@@ -54,11 +54,14 @@
                 <h3 style="font-family: 'Playfair Display', serif; color: var(--olive-green); font-size: 32px; margin-bottom: 30px; font-style: italic;">"A Decade of perseverance- An Arcade of Trees"</h3>
                 
                 <!-- Video -->
-                <div style="margin: 40px 0;">
-                    <video controls preload="metadata" style="width: 100%; max-width: 800px; border: 3px solid var(--border-brown); border-radius: 8px;">
+                <div style="margin: 40px 0; position: relative;">
+                    <video id="documentaryVideo" controls preload="metadata" style="width: 100%; max-width: 800px; border: 3px solid var(--border-brown); border-radius: 8px; cursor: pointer;" onclick="openVideoPopup('documentaryVideo')">
                         <source src="nisargavedh-documentary.mp4#t=1" type="video/mp4">
                         Your browser does not support the video tag.
                     </video>
+                    <button class="video-fullscreen-btn" onclick="openVideoPopup('documentaryVideo')" title="View Fullscreen" style="position: absolute; bottom: 30px; left: calc(50% - 400px + 20px);">
+                        <i class="fas fa-expand"></i>
+                    </button>
                     
                     <!-- YouTube Button Below Video -->
                     <div style="text-align: right; max-width: 800px; margin: 15px auto 0;">
@@ -152,6 +155,19 @@
         <i class="fab fa-whatsapp"></i>
     </a>
 
+    <!-- Video Popup Modal -->
+    <div id="videoPopup" class="video-popup-overlay">
+        <div class="video-popup-container">
+            <button class="video-popup-close" onclick="closeVideoPopup()">
+                <i class="fas fa-times"></i>
+            </button>
+            <video id="popupVideo" controls>
+                <source id="popupVideoSource" src="" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    </div>
+
     <!-- AI Chatbot -->
     <div class="chatbot-container" id="chatbot">
         <div class="chatbot-header">
@@ -202,6 +218,61 @@
                     });
                 }
             });
+        });
+
+        // Video Popup Functions
+        function openVideoPopup(videoId) {
+            const sourceVideo = document.getElementById(videoId);
+            const popup = document.getElementById('videoPopup');
+            const popupVideo = document.getElementById('popupVideo');
+            const popupSource = document.getElementById('popupVideoSource');
+            
+            // Get the video source
+            const videoSrc = sourceVideo.querySelector('source').src;
+            popupSource.src = videoSrc;
+            popupVideo.load();
+            
+            // Show popup and play video
+            popup.style.display = 'flex';
+            popupVideo.play();
+            
+            // Pause the original video
+            sourceVideo.pause();
+            
+            // Prevent body scroll
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeVideoPopup() {
+            const popup = document.getElementById('videoPopup');
+            const popupVideo = document.getElementById('popupVideo');
+            
+            // Hide popup and stop video
+            popup.style.display = 'none';
+            popupVideo.pause();
+            popupVideo.currentTime = 0;
+            
+            // Restore body scroll
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close popup when clicking outside the video
+        document.addEventListener('DOMContentLoaded', function() {
+            const popup = document.getElementById('videoPopup');
+            if (popup) {
+                popup.addEventListener('click', function(e) {
+                    if (e.target === popup) {
+                        closeVideoPopup();
+                    }
+                });
+            }
+        });
+
+        // Close popup with Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeVideoPopup();
+            }
         });
 
         // Chatbot functionality
