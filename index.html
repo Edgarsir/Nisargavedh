@@ -61,17 +61,11 @@
             <p class="hero-description">Protecting our environment and preserving natural habitats for future generations through conservation, education, and community action.</p>
             <a href="involved.html" class="btn floating-btn mobile-hero-btn">Get Involved</a>
             <div class="hero-image-section">
-                <div class="hero-image hero-video">
-                    <video id="heroVideo" autoplay muted loop playsinline onclick="openVideoPopup('heroVideo')">
-                        <source src="nisargavedh-landing.mp4" type="video/mp4">
+                <div class="hero-image hero-video" style="position: relative; border: none; padding: 0; background: transparent;">
+                    <video id="heroVideo" controls preload="metadata" style="width: 100%; max-width: 800px; border: 3px solid var(--border-brown); border-radius: 8px; cursor: pointer; display: block; margin: 0 auto;" onclick="openVideoPopup('heroVideo')">
+                        <source src="nisargavedh-landing.mp4#t=1" type="video/mp4">
                         Your browser does not support the video tag.
                     </video>
-                    <button class="video-sound-btn" onclick="toggleSound()">
-                        <i class="fas fa-volume-mute" id="soundIcon"></i>
-                    </button>
-                    <button class="video-fullscreen-btn" onclick="openVideoPopup('heroVideo')" title="View Fullscreen">
-                        <i class="fas fa-expand"></i>
-                    </button>
                 </div>
                 <div class="hero-message">
                     <h3>🌿 Important Message</h3>
@@ -357,21 +351,6 @@
             });
         });
 
-        // Video sound toggle
-        function toggleSound() {
-            var video = document.getElementById('heroVideo');
-            var icon = document.getElementById('soundIcon');
-            if (video.muted) {
-                video.muted = false;
-                icon.classList.remove('fa-volume-mute');
-                icon.classList.add('fa-volume-up');
-            } else {
-                video.muted = true;
-                icon.classList.remove('fa-volume-up');
-                icon.classList.add('fa-volume-mute');
-            }
-        }
-
         // Video Popup Functions
         function openVideoPopup(videoId) {
             const sourceVideo = document.getElementById(videoId);
@@ -405,10 +384,7 @@
             popupVideo.pause();
             popupVideo.currentTime = 0;
             
-            // Resume original video if it exists
-            if (heroVideo) {
-                heroVideo.play();
-            }
+            // Don't auto-resume original video (user controls it)
             
             // Restore body scroll
             document.body.style.overflow = 'auto';
