@@ -1517,12 +1517,7 @@ footer a {
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: background 0.3s;
     z-index: 10;
-}
-
-.carousel-btn:hover {
-    background: rgba(61, 77, 28, 1);
 }
 
 .prev-btn {
@@ -2198,18 +2193,33 @@ footer a {
 
 
 /* Supporters Marquee Section */
-.supporters-section {
-    padding: 40px 0;
-    text-align: center;
-    border-top: 1px dashed var(--border-brown);
-    margin-top: 40px;
-}
-
-.supporters-section h3 {
+.supporters-heading {
     font-family: 'Fredericka the Great', cursive;
     font-size: 32px;
-    color: #3d4d1c;
-    margin-bottom: 25px;
+    color: var(--dark-green);
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.supporters-section {
+    padding: 60px 0;
+    text-align: center;
+    background-color: var(--olive-green);
+    position: relative;
+    border: none;
+    margin-top: 0;
+}
+
+.supporters-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('https://www.transparenttextures.com/patterns/old-map.png');
+    opacity: 0.15;
+    pointer-events: none;
 }
 
 .supporters-marquee {
@@ -2340,9 +2350,9 @@ footer a {
 }
 
 .whatwedo-item img {
-    width: 250px;
+    width: 300px;
     height: 320px;
-    object-fit: cover;
+    object-fit: contain;
     margin-bottom: 20px;
     border-radius: 30px;
 }
@@ -3328,7 +3338,7 @@ footer a {
     display: inline-block;
     width: 80px;
     height: 80px;
-    background-image: url('chatbot-owl.png');
+    background-image: url('images/chatbot-owl.png');
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
@@ -3424,7 +3434,7 @@ footer a {
     display: inline-block;
     width: 30px;
     height: 30px;
-    background-image: url('chatbot-owl.png');
+    background-image: url('images/chatbot-owl.png');
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
@@ -4199,7 +4209,7 @@ p {
 
 /* Supporters marquee mobile */
 @media (max-width: 768px) {
-    .supporters-section h3 {
+    .supporters-heading {
         font-size: 32px;
     }
     
@@ -4348,4 +4358,147 @@ p {
 }
 .whitelabel{
     color: #c7c3c0;
+}
+
+/* Latest Project Heading - Match Supporters Font Size */
+.latest-project-heading {
+    font-family: 'Fredericka the Great', cursive;
+    font-size: 32px;
+    color: var(--dark-green);
+    margin-bottom: 15px;
+}
+
+/* Project Carousel Styles */
+.project-carousel {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+    padding: 0 10px;
+}
+
+.project-carousel-container {
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+    overflow: hidden;
+}
+
+.project-carousel-track {
+    position: relative;
+    width: 100%;
+}
+
+.project-slide {
+    display: none;
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border: 3px solid var(--border-brown);
+    border-radius: 8px;
+}
+
+.project-slide.active {
+    display: block;
+}
+
+.carousel-btn {
+    background-color: var(--olive-green);
+    color: white;
+    border: none;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    flex-shrink: 0;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+.carousel-btn i {
+    pointer-events: none;
+}
+
+/* Mobile Carousel Styles */
+@media (max-width: 768px) {
+    .project-carousel {
+        gap: 10px;
+        padding: 0 5px;
+    }
+    
+    .carousel-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 16px;
+    }
+    
+    .project-slide {
+        height: 250px;
+    }
+    
+    .latest-project-heading {
+        font-size: 28px;
+    }
+}
+
+/* Documentary CTA Button on Programs Page */
+.documentary-cta {
+    text-align: center;
+    margin-top: 50px;
+    padding-top: 30px;
+    border-top: 2px solid var(--border-brown);
+}
+
+.btn-documentary {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background-color: var(--olive-green);
+    color: white;
+    padding: 15px 35px;
+    font-size: 18px;
+    font-family: 'Lora', serif;
+    text-decoration: none;
+    border-radius: 5px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.btn-documentary i {
+    font-size: 20px;
+}
+
+@media (max-width: 768px) {
+    .documentary-cta {
+        margin-top: 40px;
+        padding-top: 25px;
+    }
+    
+    .btn-documentary {
+        padding: 12px 25px;
+        font-size: 16px;
+    }
+    
+    .btn-documentary i {
+        font-size: 18px;
+    }
+}
+
+
+/* Blinking Animation for News Items */
+@keyframes blink {
+    0%, 50%, 100% {
+        opacity: 1;
+    }
+    25%, 75% {
+        opacity: 0.4;
+    }
+}
+
+.news-item h4 {
+    animation: blink 2s ease-in-out infinite;
 }
