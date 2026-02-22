@@ -1457,7 +1457,9 @@ footer a {
 }
 
 .latest-project {
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 /* .latest-project h2 {
@@ -1481,6 +1483,19 @@ footer a {
 
 /* Project Images Grid */
 .project-images-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    margin: 20px 0;
+    max-width: 1000px;
+}
+
+@media (max-width: 768px) {
+    .project-images-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+}
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 20px;
@@ -2062,20 +2077,22 @@ footer a {
 
 .program-image {
     overflow: hidden;
+    width: 300px;
+    height: 180px;
 }
 
 .program-image img {
     width: 100%;
-    height: 180px;
+    height: 100%;
     object-fit: cover;
     border: 2px solid var(--border-brown);
+    display: block;
 }
 
-/* Show full images for specific programs */
-.program-image img[src="afforestation-banner.jpg"],
-.program-image img[src="urban-consciousness-banner.jpg"] {
-    height: auto;
-    object-fit: contain;
+.program-content {
+    padding: 20px 20px 20px 40px;
+    overflow: hidden;
+    word-wrap: break-word;
 }
 
 .program-content h3 {
@@ -2102,8 +2119,28 @@ footer a {
         grid-template-columns: 1fr;
     }
     
+    .program-image {
+        width: 100%;
+        height: auto;
+    }
+    
     .program-image img {
+        width: 100%;
+        height: auto;
+        max-height: 250px;
+        object-fit: contain;
+    }
+    
+    /* Force Rural Welfare and Education images to landscape on mobile */
+    .program-image img[src*="rural-welfare"],
+    .program-image img[src*="education-banner"] {
         height: 200px;
+        object-fit: cover;
+        object-position: center;
+    }
+    
+    .program-content {
+        padding: 20px;
     }
 }
 
@@ -2198,12 +2235,19 @@ footer a {
     font-size: 32px;
     color: var(--dark-green);
     margin-bottom: 20px;
-    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 10px;
+    border-bottom: 3px solid var(--olive-green);
+    display: table;
+    max-width: fit-content;
 }
 
 .supporters-section {
     padding: 60px 0;
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     background-color: var(--olive-green);
     position: relative;
     border: none;
@@ -2327,7 +2371,9 @@ footer a {
 /* What We Do Section */
 .whatwedo-section {
     padding: 60px 30px;
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .whatwedo-section h2 {
@@ -2335,6 +2381,12 @@ footer a {
     font-size: 36px;
     color: #3d4d1c;
     margin-bottom: 40px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 10px;
+    border-bottom: 3px solid var(--olive-green);
+    display: table;
+    max-width: fit-content;
 }
 
 .whatwedo-grid {
@@ -2351,9 +2403,9 @@ footer a {
 
 .whatwedo-item img {
     width: 300px;
-    height: 320px;
+    height: 420px;
     object-fit: contain;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
     border-radius: 30px;
 }
 
@@ -2362,6 +2414,9 @@ footer a {
     font-size: 20px;
     color: var(--olive-green);
     margin-bottom: 10px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid var(--olive-green);
+    display: inline-block;
 }
 
 .whatwedo-item p {
@@ -2373,12 +2428,21 @@ footer a {
 @media (max-width: 768px) {
     .whatwedo-grid {
         grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    .whatwedo-item {
+        padding: 20px 15px;
+        border: 3px solid var(--border-brown);
+        border-radius: 20px;
+        background: rgba(255, 255, 255, 0.5);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     }
     
     .whatwedo-item img {
         width: 100%;
         height: auto;
-        border-radius: 0;
+        border-radius: 15px;
     }
 }
 
@@ -2420,6 +2484,11 @@ footer a {
     font-size: 32px;
     color: #3d4d1c;
     margin-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 10px;
+    border-bottom: 3px solid var(--olive-green);
+    display: table;
 }
 
 .vmg-content p {
@@ -2850,7 +2919,8 @@ footer a {
 .latest-project .btn-donate {
     font-size: 13px;
     padding: 12px 30px 12px 35px;
-    margin-bottom: 25px;
+    margin-top: 25px;
+    display: inline-block;
 }
 
 .latest-project .btn-donate::before {
@@ -3782,6 +3852,7 @@ p {
     /* What we do section */
     .whatwedo-section h2 {
         font-size: 28px;
+        max-width: fit-content;
     }
     
     .whatwedo-grid {
@@ -4211,6 +4282,7 @@ p {
 @media (max-width: 768px) {
     .supporters-heading {
         font-size: 32px;
+        max-width: fit-content;
     }
     
     .supporters-track img {
@@ -4243,6 +4315,12 @@ p {
     font-size: 42px;
     color: var(--olive-green);
     margin-bottom: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 10px;
+    border-bottom: 3px solid var(--olive-green);
+    display: table;
+    max-width: fit-content;
 }
 
 .progress-subtitle {
@@ -4271,6 +4349,12 @@ p {
     font-size: 40px;
     color: var(--olive-green);
     margin-bottom: 15px;
+}
+
+.stat-icon img {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
 }
 
 .stat-number {
@@ -4366,6 +4450,12 @@ p {
     font-size: 32px;
     color: var(--dark-green);
     margin-bottom: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 10px;
+    border-bottom: 3px solid var(--olive-green);
+    display: table;
+    max-width: fit-content;
 }
 
 /* Project Carousel Styles */
@@ -4394,10 +4484,10 @@ p {
 .project-slide {
     display: none;
     width: 100%;
-    height: 300px;
-    object-fit: cover;
-    border: 3px solid var(--border-brown);
+    height: auto;
+    object-fit: contain;
     border-radius: 8px;
+    max-height: none;
 }
 
 .project-slide.active {
@@ -4427,22 +4517,47 @@ p {
 /* Mobile Carousel Styles */
 @media (max-width: 768px) {
     .project-carousel {
-        gap: 10px;
-        padding: 0 5px;
+        gap: 0;
+        padding: 0;
+        width: 100%;
+        box-sizing: border-box;
+        position: relative;
     }
     
-    .carousel-btn {
-        width: 40px;
-        height: 40px;
-        font-size: 16px;
+    .project-carousel-container {
+        max-width: 100%;
+        width: 100%;
+        overflow: hidden;
     }
     
     .project-slide {
-        height: 250px;
+        height: auto;
+        width: 100%;
+        object-fit: contain;
+    }
+    
+    .carousel-btn {
+        position: absolute;
+        width: 40px;
+        height: 40px;
+        font-size: 16px;
+        flex-shrink: 0;
+        z-index: 10;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+    
+    .prev-btn {
+        left: 10px;
+    }
+    
+    .next-btn {
+        right: 10px;
     }
     
     .latest-project-heading {
         font-size: 28px;
+        max-width: fit-content;
     }
 }
 
